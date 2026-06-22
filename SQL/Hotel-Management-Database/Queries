@@ -1,0 +1,167 @@
+Query 1:
+SELECT 
+    hotelcomplex1.організації.id_Організації, 
+    MAX(hotelcomplex1.організації.Назва) as Назва, 
+    COUNT(hotelcomplex1.організації.id_Організації) as Число_постояльців_фірм, 
+    hotelcomplex1.готель.Дата_заселення 
+FROM hotelcomplex1.договори 
+INNER JOIN hotelcomplex1.організації ON 
+hotelcomplex1.договори.id_Організації = hotelcomplex1.організації.id_Організації 
+INNER JOIN hotelcomplex1.готель ON
+hotelcomplex1.договори.id_Договору = hotelcomplex1.готель.id_Договору 
+GROUP BY 
+    hotelcomplex1.організації.id_Організації, 
+    hotelcomplex1.готель.Дата_заселення
+WITH ROLLUP
+having COUNT(hotelcomplex1.організації.id_Організації) >= 1;
+
+Query 2:
+SELECT 
+    hotelcomplex1.організації.id_Організації,
+    MAX(hotelcomplex1.організації.Назва) as Назва,
+    COUNT(hotelcomplex1.організації.id_Організації) as Число_постояльців_фірм, 
+    hotelcomplex1.готель.Дата_заселення 
+FROM hotelcomplex1.договори 
+INNER JOIN hotelcomplex1.організації ON 
+hotelcomplex1.договори.id_Організації = hotelcomplex1.організації.id_Організації 
+INNER JOIN hotelcomplex1.готель ON 
+hotelcomplex1.договори.id_Договору = hotelcomplex1.готель.id_Договору 
+GROUP BY 
+    hotelcomplex1.організації.id_Організації, 
+    hotelcomplex1.готель.Дата_заселення 
+WITH ROLLUP 
+having COUNT(hotelcomplex1.організації.id_Організації) >= 1 
+AND hotelcomplex1.готель.Дата_заселення LIKE '2022-%';
+
+Query 3:
+SELECT 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.номери.Місцевість_номеру, 
+    COUNT(hotelcomplex1.клієнти.id_Клієнта) as counts 
+FROM hotelcomplex1.готель 
+INNER JOIN hotelcomplex1.номери ON 
+hotelcomplex1.готель.id_Номеру = hotelcomplex1.номери.id_Номеру
+INNER JOIN hotelcomplex1.клієнти ON 
+hotelcomplex1.готель.id_Клієнта = hotelcomplex1.клієнти.id_Клієнта
+WHERE hotelcomplex1.номери.Місцевість_номеру = 'двомісний' 
+GROUP BY 
+    hotelcomplex1.клієнти.id_Клієнта, 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.номери.Місцевість_номеру WITH ROLLUP; 
+
+Query 4:
+SELECT 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.номери.Місцевість_номеру, 
+    COUNT(hotelcomplex1.клієнти.id_Клієнта) as counts 
+FROM hotelcomplex1.готель 
+INNER JOIN hotelcomplex1.номери ON 
+hotelcomplex1.готель.id_Номеру = hotelcomplex1.номери.id_Номеру 
+INNER JOIN hotelcomplex1.клієнти ON 
+hotelcomplex1.готель.id_Клієнта = hotelcomplex1.клієнти.id_Клієнта 
+WHERE hotelcomplex1.номери.Місцевість_номеру = 'двомісний' 
+AND hotelcomplex1.готель.Дата_заселення LIKE '2022-%' 
+GROUP BY 
+    hotelcomplex1.клієнти.id_Клієнта, 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.номери.Місцевість_номеру WITH ROLLUP; 
+
+Query 5:
+SELECT 
+    hotelcomplex1.номери.id_Номеру, 
+    hotelcomplex1.номери.Місцевість_номеру, 
+    hotelcomplex1.номери.Ціна_проживання, 
+    IFNULL(MIN(hotelcomplex1.готель.Дата_заселення), NOW()) AS Час_вільності 
+FROM hotelcomplex1.готель 
+INNER JOIN hotelcomplex1.номери ON 
+hotelcomplex1.готель.id_Номеру = hotelcomplex1.номери.id_Номеру 
+GROUP BY 
+    hotelcomplex1.номери.id_Номеру, 
+    hotelcomplex1.номери.Місцевість_номеру, 
+    hotelcomplex1.номери.Ціна_проживання; 
+
+Query 6:
+SELECT 
+    hotelcomplex1.номери.id_Номеру, 
+    hotelcomplex1.номери.Місцевість_номеру, 
+    hotelcomplex1.номери.Ціна_проживання, 
+    hotelcomplex1.готель.Дата_заселення, 
+    hotelcomplex1.готель.Дата_виселення 
+FROM hotelcomplex1.готель 
+INNER JOIN hotelcomplex1.номери ON hotelcomplex1.готель.id_Номеру = hotelcomplex1.номери.id_Номеру 
+WHERE hotelcomplex1.готель.Дата_виселення IS NOT NULL 
+AND hotelcomplex1.готель.Дата_виселення <= '2023-04-01'; 
+
+Query 7:
+SELECT 
+    hotelcomplex1.організації.Назва, 
+    hotelcomplex1.організації.Властивості, 
+    hotelcomplex1.договори.id_Договору, 
+    hotelcomplex1.договори.Кількість_днів, 
+    hotelcomplex1.готель.Дата_заселення, 
+    hotelcomplex1.готель.Дата_виселення 
+FROM hotelcomplex1.організації 
+INNER JOIN hotelcomplex1.договори ON hotelcomplex1.організації.id_Організації = hotelcomplex1.договори.id_Організації 
+INNER JOIN hotelcomplex1.готель ON hotelcomplex1.договори.id_Договору = hotelcomplex1.готель.id_Договору 
+WHERE '2022-12-17' BETWEEN hotelcomplex1.готель.Дата_заселення AND hotelcomplex1.готель.Дата_виселення;
+
+Query 8:
+SELECT 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.готель.id_Корпусу, 
+    COUNT(hotelcomplex1.клієнти.id_Клієнта) AS Кількість_заселень 
+FROM hotelcomplex1.готель 
+INNER JOIN hotelcomplex1.клієнти ON hotelcomplex1.готель.id_Клієнта = hotelcomplex1.клієнти.id_Клієнта 
+GROUP BY 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.готель.id_Корпусу 
+ORDER BY 
+    Кількість_заселень DESC; 
+
+Query 9:
+SELECT 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.готель.Дата_заселення 
+FROM hotelcomplex1.клієнти 
+INNER JOIN hotelcomplex1.готель ON hotelcomplex1.клієнти.id_Клієнта = hotelcomplex1.готель.id_Клієнта 
+WHERE hotelcomplex1.готель.Дата_заселення BETWEEN '2023-05-01' AND '2023-12-31';
+
+Query 10:
+SELECT 
+    hotelcomplex1.клієнти.id_Клієнта, 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.готель.Дата_оплати_проживання, 
+    COUNT(hotelcomplex1.готель.id_Клієнта) AS Кількість_відвідувань, 
+    GROUP_CONCAT(hotelcomplex1.номери.id_Номеру) AS Номери_зупинок, 
+    GROUP_CONCAT(hotelcomplex1.готель.Дата_заселення, ' - ', hotelcomplex1.готель.Дата_виселення) AS Періоди_зупинок, 
+    GROUP_CONCAT(CASE WHEN hotelcomplex1.готель.id_Послуги = 1 THEN hotelcomplex1.додаткові_послуги.Назва_послуги ELSE NULL END) AS Використані_послуги, 
+    GROUP_CONCAT(CASE WHEN hotelcomplex1.готель.id_Послуги = 1 THEN hotelcomplex1.готель.Дата_оплати_послуг ELSE NULL END) AS Дати_оплати_послуги 
+FROM hotelcomplex1.клієнти 
+INNER JOIN hotelcomplex1.готель ON hotelcomplex1.клієнти.id_Клієнта = hotelcomplex1.готель.id_Клієнта 
+INNER JOIN hotelcomplex1.номери ON hotelcomplex1.готель.id_Номеру = hotelcomplex1.номери.id_Номеру 
+INNER JOIN hotelcomplex1.додаткові_послуги ON hotelcomplex1.готель.id_Послуги=hotelcomplex1.додаткові_послуги.id_Послуги 
+WHERE hotelcomplex1.клієнти.ПІБ = 'Гжегужко В.О.' 
+GROUP BY 
+    hotelcomplex1.клієнти.id_Клієнта, 
+    hotelcomplex1.клієнти.ПІБ, hotelcomplex1.готель.Дата_оплати_проживання; 
+
+Query 11:
+SELECT 
+    hotelcomplex1.номери.id_Номеру, 
+    hotelcomplex1.клієнти.ПІБ, 
+    hotelcomplex1.готель.Дата_заселення, 
+    hotelcomplex1.готель.Дата_виселення 
+FROM hotelcomplex1.номери 
+INNER JOIN hotelcomplex1.готель ON hotelcomplex1.номери.id_Номеру = hotelcomplex1.готель.id_Номеру 
+INNER JOIN hotelcomplex1.клієнти ON hotelcomplex1.готель.id_Клієнта = hotelcomplex1.клієнти.id_Клієнта 
+WHERE hotelcomplex1.номери.id_Номеру = '211' AND (hotelcomplex1.готель.Дата_заселення BETWEEN '2022-11-10' AND '2022-12-10'); 
+
+Query 12:
+SELECT 
+    (COUNT(*) / ( SELECT COUNT(*) FROM hotelcomplex1.номери )) * 100 AS Відсоткове_відношення 
+FROM hotelcomplex1.номери 
+WHERE hotelcomplex1.номери.id_Номеру NOT IN ( 
+    SELECT hotelcomplex1.готель.id_Номеру 
+    FROM hotelcomplex1.готель 
+    WHERE hotelcomplex1.готель.id_Договору IS NOT NULL 
+);
