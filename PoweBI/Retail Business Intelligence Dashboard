@@ -1,0 +1,31 @@
+Project Overview:
+This project presents an interactive business intelligence solution developed in Power BI for analyzing retail sales data. 
+The dashboard provides insights into sales performance, payment methods, product categories, and manufacturer countries through a multi-page analytical report.
+
+Tools:
+- Microsoft Power BI
+- DAX
+- Data Modeling
+- Business Intelligence
+- Data Visualization
+
+Methods Applied:
+- Data modeling using related tables
+- Calendar table creation for time-based analysis
+- DAX measures for KPI calculation
+- Interactive dashboard design
+- Multi-page report navigation
+- Dynamic chart switching
+- Sales and payment method analysis
+- Product category analysis
+- Manufacturer country analysis
+- Interactive filtering and drill-down exploration
+
+Dashboard Structure:
+Page 1 – Sales and Payment Analysis: Analysis of sales performance, payment methods, and key business indicators.
+Page 2 – Sales Structure Analysis: Analysis of product categories, sales distribution, and customer purchasing patterns.
+Page 3 – Manufacturer Country Analysis: Analysis of product origins, manufacturer countries, and international sales structure.
+
+Results:
+The dashboard enables comprehensive analysis of retail operations through interactive visualizations, KPI monitoring, and multidimensional exploration of sales data. 
+Users can navigate between report pages, apply filters, and switch between alternative visual representations to gain deeper business insights.
