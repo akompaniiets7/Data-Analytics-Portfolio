@@ -1,0 +1,96 @@
+Query 1:
+SELECT 
+    salaries.emp_no, 
+    employees.first_name, 
+    salaries.salary, 
+    salaries.from_date, 
+    SUM(salaries.salary) OVER (
+        PARTITION BY emp_no
+        ORDER BY from_date 
+    ) AS cumulative_salary 
+FROM employees.salaries 
+JOIN 
+    employees.employees ON salaries.emp_no = employees.emp_no 
+WHERE employees.first_name LIKE '%K%' 
+ORDER BY 
+    employees.first_name, 
+    salaries.from_date; 
+
+Query 2:
+SELECT 
+    salaries.emp_no, 
+    employees.first_name, 
+    employees.birth_date, 
+    salaries.salary AS current_salary, 
+    MAX(salaries.salary) OVER (
+        PARTITION BY salaries.emp_no 
+    ) AS max_salary,
+    salaries.salary - MAX(salaries.salary) OVER (
+        PARTITION BY salaries.emp_no 
+    ) AS salary_difference 
+FROM salaries 
+JOIN 
+    employees ON salaries.emp_no = employees.emp_no 
+WHERE MONTH(employees.birth_date) = 4 
+ORDER BY 
+    salaries.emp_no, 
+    salaries.from_date; 
+
+Query 3:
+SELECT 
+    salaries.emp_no, 
+    employees.first_name, 
+    employees.last_name, 
+    salaries.salary, 
+    salaries.from_date, 
+    RANK() OVER (
+        ORDER BY salaries.salary DESC 
+    ) AS salary_rank 
+FROM salaries 
+JOIN 
+    employees ON salaries.emp_no = employees.emp_no 
+WHERE salaries.to_date = '9999-01-01' 
+ORDER BY 
+    salary_rank, 
+    salaries.salary DESC; 
+
+Query 4:
+SELECT 
+    salaries.emp_no, 
+    employees.first_name, 
+    employees.hire_date, 
+    salaries.from_date, 
+    salaries.salary AS current_salary, 
+    LAG(salaries.salary, 1, 0) OVER (
+        PARTITION BY salaries.emp_no ORDER BY salaries.from_date 
+    ) AS previous_salary,
+    salaries.salary - LAG(salaries.salary, 1, 0) OVER (
+       PARTITION BY salaries.emp_no ORDER BY salaries.from_date 
+    ) AS salary_change 
+FROM salaries 
+JOIN 
+    employees ON salaries.emp_no = employees.emp_no 
+WHERE employees.hire_date >= '1995-11-01' AND employees.hire_date <= '1995-11-30' 
+ORDER BY 
+    salaries.emp_no, 
+    salaries.from_date; 
+
+Query 5:
+SELECT 
+    salaries.emp_no, 
+    employees.first_name, 
+    salaries.from_date, 
+    salaries.salary AS current_salary, 
+    MAX(salaries.salary) OVER (
+        PARTITION BY salaries.emp_no 
+    ) AS max_salary, 
+    ABS(salaries.salary - MAX(salaries.salary) OVER (
+        PARTITION BY salaries.emp_no 
+    )) AS salary_difference 
+FROM salaries 
+JOIN 
+    employees ON salaries.emp_no = employees.emp_no 
+WHERE MONTH(employees.birth_date) = 4 AND employees.first_name = 'Sumant' 
+ORDER BY 
+    salaries.emp_no, 
+    salaries.from_date;
