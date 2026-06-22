@@ -1,0 +1,43 @@
+Project Overview:
+This project presents the design and analytical use of a relational database for a hotel management system. 
+The database supports customer accommodation management, room allocation, contract administration, organization-based bookings, and additional services tracking.
+The project demonstrates the use of SQL for business reporting, operational monitoring, customer analysis, and hotel occupancy management.
+
+Tools:
+- MySQL
+- Relational Database Design
+- SQL Query Development
+- Data Analysis
+
+Database Components:
+- Customers
+- Rooms
+- Hotel Stays
+- Organizations
+- Contracts
+- Additional Services
+
+Methods Applied:
+- Multi-table joins
+- Aggregation and grouping
+- Nested queries
+- Rollup reporting
+- Occupancy analysis
+- Customer activity analysis
+- Room availability tracking
+- Date range filtering
+- Business reporting
+- Service utilization analysis
+
+Business Questions Addressed:
+- Which organizations generated the highest number of guest stays?
+- How many guests occupied specific room categories?
+- Which rooms were available during selected periods?
+- Which customers visited most frequently?
+- What services were used by specific guests?
+- What percentage of rooms remained unoccupied?
+- Which contracts were active during selected dates?
+
+Results
+The project demonstrates the practical application of SQL for hotel management and operational analytics. 
+The developed queries support decision-making related to occupancy planning, customer management, contract administration, and service monitoring.
