@@ -1,0 +1,24 @@
+Project Overview:
+This project investigates different approaches to forecasting temperature time series data and compares their performance.
+
+Tools:
+- Microsoft Excel
+- Statistical Analysis
+- Time Series Forecasting
+
+Methods Applied:
+- Irwin anomaly detection method
+- Moving Average
+- Weighted Moving Average
+- Exponential Smoothing
+- Double Exponential Smoothing
+- Triple Exponential Smoothing
+- Adaptive Smoothing
+- Holt-Winters Model
+- Trend Modeling
+- Correlation and Regression Analysis
+- Seasonal Analysis
+- Autoregression
+
+Results:
+The project compares forecasting accuracy across different methods and evaluates the impact of trend and seasonality on prediction quality.
