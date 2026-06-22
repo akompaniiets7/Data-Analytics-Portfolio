@@ -1,0 +1,24 @@
+Project Overview:
+This project demonstrates the development of a retail sales analytics solution using an OLAP data model and an interactive dashboard in Microsoft Excel. 
+The model integrates sales, products, stores, and customer data to support multidimensional business analysis.
+
+Tools:
+- Microsoft Excel
+- Pivot Tables
+- Pivot Charts
+- OLAP Data Model
+- Dashboard Design
+- Data Visualization
+
+Methods Applied:
+- Data modeling using related tables
+- OLAP-based multidimensional analysis
+- Sales aggregation and filtering
+- Interactive dashboard development
+- Geographic sales visualization
+- Customer segmentation by gender
+- Product category analysis
+
+Results:
+The project provides an interactive environment for analyzing sales performance, customer purchasing behavior, product categories, and store efficiency.
+The dashboard allows users to filter data by year and product category, supporting business decision-making and performance evaluation.
