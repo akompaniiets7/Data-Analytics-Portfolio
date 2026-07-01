@@ -1,14 +1,16 @@
-Project Overview:
+#Employee-Workforce-Analytics
+
+##Project Overview
 This project demonstrates the use of SQL for employee and salary analytics using the Employees sample database. 
 The analysis focuses on salary progression, employee ranking, compensation trends, and advanced analytical queries using window functions.
 
-Tools:
+##Tools
 - MySQL
 - SQL
 - Window Functions
 - Data Analysis
 
-Methods Applied:
+##Methods Applied
 - Filtering and conditional selection
 - Multi-table joins
 - Salary analysis
@@ -17,12 +19,12 @@ Methods Applied:
 - Historical salary comparison
 - Time-based analysis
 
-Key SQL Features:
+##Key SQL Features
 - Running Total: SUM() OVER (PARTITION BY ... ORDER BY ...)
 - Ranking: RANK() OVER (...)
 - Historical Comparison: LAG() OVER (...)
 - Window Aggregation: MAX() OVER (...)
 
-Results:
+##Results
 The project demonstrates how SQL can be used not only for data retrieval but also for advanced workforce analytics. 
 Window functions were applied to analyze salary growth, employee rankings, cumulative earnings, and historical compensation changes.
