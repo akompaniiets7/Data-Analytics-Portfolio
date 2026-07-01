@@ -1,14 +1,16 @@
-Project Overview:
+#European Banking System Clustering Analysis
+
+##Project Overview
 This project investigates the classification of European Union banking systems using unsupervised learning techniques.
 Different clustering approaches were applied and compared to identify groups of countries with similar banking sector characteristics and to determine the most significant factors influencing cluster formation.
 
-Tools:
+##Tools
 - MATLAB
 - Statistics and Machine Learning Toolbox
 - Fuzzy Logic Toolbox
 - Neural Clustering Tool
 
-Methods Applied:
+##Methods Applied
 - Data Normalization
 - K-Means Clustering
 - Fuzzy C-Means Clustering
@@ -16,7 +18,7 @@ Methods Applied:
 - Cluster Profile Analysis
 - Comparative Cluster Evaluation
 
-Project Workflow:
+##Project Workflow
 1. Data preparation and normalization.
 2. Clustering using K-Means for different numbers of clusters.
 3. Clustering using Fuzzy C-Means.
@@ -24,5 +26,5 @@ Project Workflow:
 5. Neural clustering analysis.
 6. Comparison of clustering results and interpretation of cluster profiles.
 
-Results:
+##Results
 The project compares several clustering techniques and demonstrates how different approaches reveal structural similarities and differences among European banking systems.
