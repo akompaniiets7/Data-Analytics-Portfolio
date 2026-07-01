@@ -1,12 +1,14 @@
-Project Overview:
+#Time-Series-Forecasting and Temperature Analysis
+
+##Project Overview
 This project investigates different approaches to forecasting temperature time series data and compares their performance.
 
-Tools:
+##Tools
 - Microsoft Excel
 - Statistical Analysis
 - Time Series Forecasting
 
-Methods Applied:
+##Methods Applied
 - Irwin anomaly detection method
 - Moving Average
 - Weighted Moving Average
@@ -20,5 +22,5 @@ Methods Applied:
 - Seasonal Analysis
 - Autoregression
 
-Results:
+##Results
 The project compares forecasting accuracy across different methods and evaluates the impact of trend and seasonality on prediction quality.
