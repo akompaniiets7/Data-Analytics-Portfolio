@@ -1,13 +1,16 @@
-Project Overview:
+#Investment Portfolio
+
+##Project Overview
 This project applies the Markowitz portfolio optimization approach to evaluate different investment allocation strategies. 
 The analysis compares portfolio performance under both hypothetical conditions and a stable market environment while considering the trade-off between risk and expected return.
 
-Tools:
+##Tools
 - Microsoft Excel
 - Financial Analysis
 - Portfolio Optimization
 - Risk Assessment
-Methods Applied:
+
+##Methods Applied
 - Markowitz portfolio theory
 - Expected return calculation
 - Risk estimation using variance and standard deviation
@@ -15,6 +18,6 @@ Methods Applied:
 - Comparison of alternative investment allocations
 - Risk-return evaluation
 
-Results:
+##Results
 The project demonstrates how portfolio diversification influences investment performance and risk exposure. 
 Different allocation scenarios are compared to identify more efficient investment strategies and to support informed financial decision-making.
