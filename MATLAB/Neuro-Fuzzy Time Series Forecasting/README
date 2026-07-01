@@ -1,15 +1,17 @@
-Project Overview:
+#Neuro-Fuzzy Time Series Forecasting
+
+##Project Overview
 This project focuses on forecasting monthly U.S. coking coal export volumes using the Adaptive Neuro-Fuzzy Inference System (ANFIS).
 The study compares two neuro-fuzzy forecasting models: a baseline model using historical observations only and an enhanced model that incorporates quarterly and annual seasonal components. 
 The workflow includes time series analysis, autocorrelation assessment, feature selection, data preprocessing, ANFIS model training, and comparative forecasting accuracy evaluation using the Mean Absolute Percentage Error (MAPE).
 
-Tools:
+##Tools
 - MATLAB
 - ANFIS Editor
 - Fuzzy Logic Toolbox
 - Time Series Analysis
 
-Methods Applied:
+##Methods Applied
 - Autocorrelation Function (ACF) Analysis
 - Lag Selection
 - Seasonal Feature Engineering
@@ -17,7 +19,7 @@ Methods Applied:
 - Neuro-Fuzzy Modeling (ANFIS)
 - Forecast Accuracy Evaluation
 
-Project Workflow:
+##Project Workflow
 1. Analysis of historical monthly export data.
 2. Identification of significant lag variables using autocorrelation analysis.
 3. Consideration of quarterly and yearly seasonal components.
@@ -25,7 +27,7 @@ Project Workflow:
 5. Training of a neuro-fuzzy forecasting model.
 6. Evaluation of forecasting performance on unseen data.
 
-Results:
+##Results
 The project compares two ANFIS-based forecasting models: one using only historical observations and another incorporating quarterly and annual seasonal components.
 Performance evaluation using the Mean Absolute Percentage Error (MAPE) demonstrated a substantial improvement when seasonality was included. 
 The seasonal model achieved a **MAPE of 67.6%**, compared to **406.9%** for the baseline model.
