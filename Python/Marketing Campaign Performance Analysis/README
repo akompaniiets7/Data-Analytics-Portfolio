@@ -1,0 +1,36 @@
+#Marketing Campaign Performance Analysis
+
+##Overview
+This project analyzes the effectiveness of digital marketing campaigns using common business analytics metrics and statistical techniques.
+The workflow includes campaign performance evaluation, KPI calculation, A/B testing, conversion funnel analysis, and short-term sales forecasting using ARIMA.
+
+##Technologies
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- SciPy
+- Statsmodels
+
+##Project Workflow
+- Data cleaning and preprocessing
+- KPI calculation
+- Campaign aggregation
+- CTR analysis
+- Conversion Rate analysis
+- ROI calculation
+- A/B statistical testing
+- Funnel visualization
+- Purchase trend analysis
+- ARIMA forecasting
+
+##Key Metrics
+- CTR
+- Conversion Rate
+- ROI
+- Funnel conversion
+- Statistical significance (Welch's t-test)
+
+##Results
+The analysis compares marketing campaign performance using business KPIs and statistical testing.
+Additionally, a simplified conversion funnel illustrates user behavior across multiple stages, while ARIMA forecasting demonstrates short-term purchase prediction based on historical observations.
