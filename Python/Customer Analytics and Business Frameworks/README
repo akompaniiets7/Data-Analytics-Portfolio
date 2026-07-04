@@ -2,7 +2,7 @@
 
 ##Overview
 This project demonstrates several widely used customer analytics frameworks for evaluating user behavior, retention, and revenue generation.
-The analysis combines AARRR metrics, customer segmentation, cohort analysis, Lean Analytics indicators, and business visualizations using retail transaction data.
+The analysis combines customer segmentation, cohort analysis, Lean Analytics indicators, and business visualizations using retail transaction data.
 
 ##Technologies
 - Python
@@ -14,15 +14,13 @@ The analysis combines AARRR metrics, customer segmentation, cohort analysis, Lea
 ##Project Workflow
 - Data preprocessing
 - Customer ID generation
-- AARRR framework
 - RFM segmentation
 - Cohort analysis
 - Retention heatmap
 - Lean Analytics metrics
--Customer revenue analysis
+- Customer revenue analysis
 
 ##Business Frameworks
-- AARRR
 - RFM
 - Cohort Analysis
 - Lean Analytics
